@@ -1,6 +1,6 @@
-# BlueStock Team A27
+# BlueStock Team K28
 
-**BlueStock Team A27** is a project focused on building a stock trading analysis platform with real-time data, visualization, and technical insights.
+**BlueStock Team K28** is a project focused on building a stock trading analysis platform with real-time data, visualization, and technical insights.
 
 ## Features
 - Real-time stock analysis and trends.
