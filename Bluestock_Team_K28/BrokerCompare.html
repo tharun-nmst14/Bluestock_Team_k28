@@ -1,0 +1,762 @@
+<style>
+    .broker-comparison {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding-bottom: 1042px;
+    }
+    
+    .header {
+      background-color: #fff;
+      box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.02);
+      padding: 28px 80px;
+      width: 100%;
+    }
+    
+    .header-content {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-container {
+      display: flex;
+      width: 81%;
+      align-items: center;
+      justify-content: space-between;
+      font: 600 15px Poppins, sans-serif;
+    }
+    
+    .logo-container {
+      display: flex;
+      gap: 25px;
+      font-size: 45px;
+      color: #1e1e1e;
+      font-weight: 700;
+    }
+    
+    .logo {
+      aspect-ratio: 1.89;
+      object-fit: contain;
+      width: 85px;
+      margin: auto 0;
+    }
+    
+    .brand-name {
+      flex-grow: 1;
+    }
+    
+    .nav-item {
+      color: #9a9a9a;
+      font-size: 15px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .nav-item-with-icon {
+      display: flex;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    
+    .nav-icon {
+      aspect-ratio: 2.5;
+      object-fit: contain;
+      width: 10px;
+      margin: auto 0;
+    }
+    
+    .live-news-container {
+      display: flex;
+      gap: 16px;
+      margin: auto 0;
+    }
+    
+    .new-badge {
+      border-radius: 2px;
+      background-color: #3f52ff;
+      font-size: 11px;
+      color: #fff;
+      padding: 0 6px 8px;
+    }
+    
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font: 600 15px Poppins, sans-serif;
+    }
+    
+    .sign-in {
+      color: #9a9a9a;
+    }
+    
+    .sign-up {
+      border-radius: 5px;
+      background-color: #3f52ff;
+      color: #fff;
+      padding: 10px 34px;
+    }
+    
+    .user-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      width: 25px;
+    }
+    
+    .main-content {
+      align-self: center;
+      display: flex;
+      margin-top: 58px;
+      width: 100%;
+      max-width: 1405px;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .comparison-header {
+      align-self: stretch;
+      display: flex;
+      gap: 20px;
+      font-family: Poppins, sans-serif;
+      justify-content: space-between;
+    }
+    
+    .comparison-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      font-size: 27px;
+      color: #2457c5;
+      font-weight: 500;
+    }
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 36px;
+    }
+    
+    .menu-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      width: 40px;
+    }
+    
+    .broker-card {
+      border-radius: 14px;
+      background-color: #fff;
+      box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 63px 70px 25px;
+    }
+    
+    .broker-logo {
+      aspect-ratio: 1;
+      object-fit: contain;
+      width: 123px;
+      z-index: 10;
+    }
+    
+    .broker-info {
+      display: flex;
+      width: 165px;
+      flex-direction: column;
+      align-items: center;
+      color: #000;
+    }
+    
+    .broker-name {
+      font-size: 28px;
+      font-weight: 600;
+    }
+    
+    .broker-rating {
+      aspect-ratio: 6.1;
+      object-fit: contain;
+      width: 100%;
+      margin-top: 9px;
+    }
+    
+    .broker-score {
+      font-size: 60px;
+      font-weight: 700;
+      margin-top: 9px;
+    }
+    
+    .open-account-btn {
+      align-self: stretch;
+      border-radius: 10px;
+      background-color: #45bbbc;
+      margin-top: 25px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+      padding: 15px 26px;
+    }
+    
+    .vs-badge {
+      background-color: #000;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      font-weight: 600;
+      width: 60px;
+      height: 60px;
+      margin: auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .comparison-chart {
+      aspect-ratio: 1.1;
+      object-fit: contain;
+      width: 1016px;
+      max-width: 100%;
+      margin: 78px 0 0 49px;
+    }
+    
+    .section-title {
+      color: #000;
+      margin-top: 92px;
+      font: 600 38px Poppins, sans-serif;
+    }
+    
+    .comparison-table {
+      width: 1012px;
+      max-width: 100%;
+      margin: 25px 0 0 51px;
+      font: 400 18px Poppins, sans-serif;
+      border: 1px solid #000;
+    }
+    
+    .table-header {
+      background-color: #2457c5;
+      display: flex;
+      gap: 20px;
+      color: #fff;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 23px 80px 23px 0;
+      font: 600 27px Poppins, sans-serif;
+    }
+    
+    .table-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 47px 15px;
+    }
+    
+    .chart-container {
+      align-self: end;
+      z-index: 10;
+      display: flex;
+      margin-top: -430px;
+      width: 972px;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    
+    .chart-line {
+      height: 1px;
+      border: 1px solid #bdbdbd;
+    }
+    
+    .chart-content {
+      margin-right: 31px;
+    }
+    
+    .chart-columns {
+      display: flex;
+      align-items: end;
+      gap: 34px;
+    }
+    
+    .chart-column {
+      border-radius: 49px;
+      display: flex;
+      width: 53px;
+    }
+    
+    .chart-legend {
+      align-self: center;
+      display: flex;
+      width: 625px;
+      max-width: 100%;
+      gap: 20px;
+      color: #000;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 19px 0 0 19px;
+      font: 600 21px Poppins, sans-serif;
+    }
+    
+    .legend-item {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+    }
+    
+    .legend-color {
+      border-radius: 50%;
+      display: flex;
+      width: 23px;
+      height: 23px;
+    }
+    
+    @media (max-width: 991px) {
+      .broker-comparison {
+        padding-bottom: 100px;
+      }
+    
+      .header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .header-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    
+      .nav-container {
+        width: 100%;
+        margin-top: 40px;
+      }
+    
+      .logo-container {
+        font-size: 40px;
+      }
+    
+      .user-actions {
+        margin-top: 40px;
+      }
+    
+      .main-content {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    
+      .comparison-header {
+        max-width: 100%;
+      }
+    
+      .broker-card {
+        padding: 0 20px;
+      }
+    
+      .broker-score {
+        font-size: 40px;
+      }
+    
+      .comparison-chart {
+        margin: 40px 0 0 10px;
+      }
+    
+      .section-title {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    
+      .comparison-table {
+        padding-right: 20px;
+      }
+    
+      .chart-container {
+        margin-top: -200px;
+      }
+    
+      .chart-content {
+        max-width: 100%;
+        margin-right: 10px;
+      }
+    }
+    </style>
+    
+    <section class="broker-comparison">
+      <header class="header">
+        <div class="header-content">
+          <nav class="nav-container">
+            <div class="logo-container">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d50b143311d4415255590ca4b256b71092bb1b8215802e893923bae871374bc9?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Bluestock logo" class="logo">
+              <span class="brand-name">BLUESTOCK</span>
+            </div>
+            <span class="nav-item">PRODUCTS</span>
+            <span class="nav-item">COMMUNITY</span>
+            <div class="nav-item-with-icon">
+              <span>MEDIA</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2fefbfff1975aa79be2792b234c999213a276e600b3b3c368dfd29cac7135748?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="nav-icon">
+            </div>
+            <div class="nav-item-with-icon">
+              <span>BROKERS</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c6b7555d4e590917b509b0691e3c762a35c2680b90a582a612083aa482214d5?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="nav-icon">
+            </div>
+            <div class="live-news-container">
+              <span class="nav-item">LIVE NEWS</span>
+              <span class="new-badge">NEW</span>
+            </div>
+          </nav>
+          <div class="user-actions">
+            <span class="sign-in">Sign In</span>
+            <button class="sign-up">Sign Up Now</button>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/591d32defc933cbecf5677c7f99f8105eb5f23b36ed5e35429aba861b85e05d3?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="User profile" class="user-icon">
+          </div>
+        </div>
+      </header>
+    
+      <main class="main-content">
+        <div class="comparison-header">
+          <nav class="comparison-menu">
+            <div class="menu-item">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ec38ce6ab3068d4618f5d1ef251cd13e4e6a2542669e065569dacf8694a08c8?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="menu-icon">
+              <span>Active Clients</span>
+            </div>
+            <div class="menu-item">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/600ab95f8c76804cd66ff169584e4f74aca87f56e527e9f2687c12a6e8f9a51d?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="menu-icon">
+              <span>Charges</span>
+            </div>
+            <div class="menu-item">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd9e09ba65cb7ab83ded37b71c30175f01e3f41ab381b5d4b7391bc0f789e2e7?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="menu-icon">
+              <span>Complaints</span>
+            </div>
+            <div class="menu-item">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c39a1bae8f4736a310f16849897abac627dda353c9ce90f8849c0e61346e3df?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="menu-icon">
+              <span>Share Holding</span>
+            </div>
+            <div class="menu-item">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a49ef930354ab8584bf043ff000fb975a79fd86552a357f3889ec74d17875d7?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="menu-icon">
+              <span>Pros & Cons</span>
+            </div>
+            <div class="menu-item">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9a3af98df36462213e6ec2486e5d6569b969e24779957c0edbc807657dab57aa?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="menu-icon">
+              <span>Ratings</span>
+            </div>
+            <div class="menu-item">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1dfc07f963c2fa3139698fe46a669100dd98a69c2b92a54671abaffc74fca703?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="menu-icon">
+              <span>Financials</span>
+            </div>
+          </nav>
+          <div class="broker-card">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e10aacf99b470da383e57cca083ea378fe68b5d8c7ed48ef5517dd72d54847a2?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Angel One logo" class="broker-logo">
+            <div class="broker-info">
+              <h2 class="broker-name">Angel One</h2>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/629d751d6ed0dfe0ba197562fea842471287d56854320cdbfa832b620b6113c3?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Angel One rating" class="broker-rating">
+              <span class="broker-score">4.7</span>
+            </div>
+            <button class="open-account-btn">Open Demat Account</button>
+          </div>
+          <div class="vs-badge">VS</div>
+          <div class="broker-card">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fed8b0a71fbca4ca4147f21cafe0653bd73a631693336e57d20f0d25b0eb3b6f?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Zerodha logo" class="broker-logo">
+            <div class="broker-info">
+              <h2 class="broker-name">Zerodha</h2>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a84c176b0620deb7d6c64ba7d6b78517fa35f33b9a508dff9527b7f8a87d2bb1?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Zerodha rating" class="broker-rating">
+              <span class="broker-score">4.6</span>
+            </div>
+            <button class="open-account-btn">Open Demat Account</button>
+          </div>
+        </div>
+    
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/11193859c619d58eb5fe0918db8e543eb9b76d222b481d6168a7810ee66ec6eb?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Comparison chart" class="comparison-chart">
+    
+        <h2 class="section-title">Account Opening and Maintenance Charges</h2>
+    
+        <table class="comparison-table">
+          <thead>
+            <tr class="table-header">
+              <th>Charges</th>
+              <th>Angel One</th>
+              <th>Zerodha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row">
+              <td>Account Opening Charges</td>
+              <td>0</td>
+              <td>200</td>
+            </tr>
+            <tr class="table-row">
+              <td>Account Maintenance Charges</td>
+              <td>₹0 for the first year then ₹ 23.6/Month</td>
+              <td>₹ 300 per year</td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <h2 class="section-title">Brokerage Charges</h2>
+    
+        <table class="comparison-table">
+          <thead>
+            <tr class="table-header">
+              <th>Brokerage Charges</th>
+              <th>Angel One</th>
+              <th>Zerodha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row">
+              <td>Intraday</td>
+              <td>₹ 20 or 0.25% (Whichever is lower)</td>
+              <td>₹ 20 or 0.03% / executed order whichever is lower</td>
+            </tr>
+            <tr class="table-row">
+              <td>Futures</td>
+              <td>₹ 20 or 0.25% (Whichever is lower)</td>
+              <td>₹ 20 or 0.03% / executed order whichever is lower</td>
+            </tr>
+            <tr class="table-row">
+              <td>Options</td>
+              <td>₹ 20 or 0.25% (Whichever is lower)</td>
+              <td>₹ 20 per executed order (on Turnover)</td>
+            </tr>
+            <tr class="table-row">
+              <td>Delivery</td>
+              <td>Zero</td>
+              <td>Zero</td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <h2 class="section-title">Brokerage Charges</h2>
+    
+        <div class="chart-container">
+          <div class="chart-line"></div>
+          <div class="chart-content">
+            <div class="chart-columns">
+              <div class="chart-column" style="height: 758px;"></div>
+              <div class="chart-column" style="height: 727px; margin-top: 31px;"></div>
+              <div class="chart-column" style="height: 469px; margin-top: 289px;"></div>
+              <div class="chart-column" style="height: 175px; margin-top: 583px;"></div>
+              <div class="chart-column" style="height: 141px; margin-top: 617px;"></div>
+              <div class="chart-column" style="height: 121px; margin-top: 637px;"></div>
+              <div class="chart-column" style="height: 31px; margin-top: 727px;"></div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #387ED1;"></div>
+              <span>Angel One</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #FF6B00;"></div>
+              <span>Zerodha</span>
+            </div>
+          </div>
+        </div>
+    
+        <h2 class="section-title">Pros & Cons</h2>
+    
+        <div class="pros-cons-section">
+          <div class="pros-cons-header">
+            <h3>Pros</h3>
+            <h3>Cons</h3>
+          </div>
+          <div class="pros-cons-content">
+            <div class="pros-column">
+              <div class="pro-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/92379eba8bb5db0f6b4f315d0ee7e6f83d0dd14fa26272d5dd9c81b8da90cc38?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>Angel One charges zero account opening charges as well as zero annual maintenance charges for only the first year</p>
+              </div>
+              <div class="pro-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/92379eba8bb5db0f6b4f315d0ee7e6f83d0dd14fa26272d5dd9c81b8da90cc38?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>Zero brokerage charges for equity delivery and remaining segments like intraday and F&O which is flat Rs. 20 per trade.</p>
+              </div>
+            </div>
+            <div class="cons-column">
+              <div class="con-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8700305ad9d753cee55545669500b9554233ce1045c24989eb50575479834629?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>Call and trade fee is charged at an extra Rs 20 per executed order.</p>
+              </div>
+              <div class="con-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8700305ad9d753cee55545669500b9554233ce1045c24989eb50575479834629?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>User Interface is a bit complex as it is not for beginners.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pros-cons-section">
+          <div class="pros-cons-header">
+            <h3>Pros</h3>
+            <h3>Cons</h3>
+          </div>
+          <div class="pros-cons-content">
+            <div class="pros-column">
+              <div class="pro-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/92379eba8bb5db0f6b4f315d0ee7e6f83d0dd14fa26272d5dd9c81b8da90cc38?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>You don't pay any brokerage when you buy shares using cash-and-carry (CNC). Delivery trade has no leverage. Once bought, shares get delivered to your demat account and if sold, shares will get debited from your demat account.</p>
+              </div>
+              <div class="pro-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0dcd170cc1e45be2dd422b26a0a513b41a6aee3bffcfec5765a3c48169394013?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>They offer services under a simple pricing model. They charge 0.03% or Rs 20 per executed order, whichever is lower, regardless of the trade size. The maximum brokerage paid by the customer is Rs 20 per trade.</p>
+              </div>
+            </div>
+            <div class="cons-column">
+              <div class="con-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8700305ad9d753cee55545669500b9554233ce1045c24989eb50575479834629?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>Doesn't provide stock tips, research reports or recommendations.</p>
+              </div>
+              <div class="con-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8700305ad9d753cee55545669500b9554233ce1045c24989eb50575479834629?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="" class="pros-cons-icon">
+                <p>Lifetime free AMC demat account plans are not available.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <h2 class="section-title">Ratings</h2>
+    
+        <div class="ratings-section">
+          <div class="broker-rating-card">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/69bf45635948afb0db26b156c5902a08f5985d7d3b528f8311245e7fe3c2ed87?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Angel One logo" class="broker-logo">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f9eeb5cc1a78d3fc834eaecb7e37f20fb99ab31ff0527de7b9834edfb1be2112?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Angel One rating stars" class="rating-stars">
+            <h3 class="broker-name">Angel One</h3>
+            <div class="rating-score">
+              <span>4.7</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/01f1b7787aafb9e2ae6648bbcf5eb4e872cced7bfe3411e4f9adefc6e1740f13?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Rating icon" class="rating-icon">
+            </div>
+            <ul class="rating-factors">
+              <li>Trust Factor</li>
+              <li>Ease of Use</li>
+              <li>Technology</li>
+            </ul>
+            <button class="open-account-btn">Open Demat Account</button>
+          </div>
+          <div class="broker-rating-card">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef017da06398c8303944a2c157579a4792016c3bf123a1fef0a4d4b6e769cad5?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Zerodha logo" class="broker-logo">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8443b383f6c32fb0004d38efd013d9b89b1a03692be05d632b114d5d80807167?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" alt="Zerodha rating stars" class="rating-stars">
+            <h3 class="broker-name">Zerodha</h3>
+            <div class="rating-score">
+              <span>4.6</span>
+            </div>
+            <ul class="rating-factors">
+              <li>Trust Factor</li>
+              <li>Ease of Use</li>
+              <li>Technology</li>
+            </ul>
+            <button class="open-account-btn">Open Demat Account</button>
+          </div>
+        </div>
+    
+        <h2 class="section-title">Financials</h2>
+    
+        <div class="financials-chart">
+          <!-- Chart content would go here -->
+        </div>
+      </main>
+    </section>
+    
+    <style>
+    .pros-cons-section {
+      margin-top: 25px;
+      border: 1px solid #2457c5;
+    }
+    
+    .pros-cons-header {
+      background-color: #f2e5e5;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 70px;
+      color: #2457c5;
+      font: 600 27px Poppins, sans-serif;
+    }
+    
+    .pros-cons-content {
+      display: flex;
+      padding: 33px 15px;
+    }
+    
+    .pros-column,
+    .cons-column {
+      flex: 1;
+    }
+    
+    .pro-item,
+    .con-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .pros-cons-icon {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .ratings-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 26px;
+    }
+    
+    .broker-rating-card {
+      border-radius: 14px;
+      background-color: #fff;
+      box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 14px 60px 73px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .rating-stars {
+      margin-top: 13px;
+    }
+    
+    .rating-score {
+      font-size: 60px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+    
+    .rating-icon {
+      width: 80px;
+      margin-left: 10px;
+    }
+    
+    .rating-factors {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    
+    .rating-factors li {
+      margin-bottom: 18px;
+    }
+    
+    .financials-chart {
+      margin-top: 25px;
+      /* Add specific styles for the financials chart */
+    }
+    
+    @media (max-width: 991px) {
+      .pros-cons-header {
+        padding: 12px 20px;
+      }
+    
+      .pros-cons-content {
+        flex-direction: column;
+      }
+    
+      .ratings-section {
+        flex-direction: column;
+      }
+    
+      .broker-rating-card {
+        margin-bottom: 20px;
+      }
+    
+      .rating-score {
+        font-size: 40px;
+      }
+    }
+    </style>
